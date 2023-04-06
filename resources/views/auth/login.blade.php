@@ -7,7 +7,7 @@
 @section('content')
   <main class="form w-100 m-auto">
 
-    <img src="{{ asset('img/logo.webp') }}" alt="School Logo" class="mb-4" width="72" height="72" />
+    <img src="{{ asset('img/logo.webp') }}" alt="Department Logo" class="mb-4" width="72" height="72" />
 
     <div class="card text-start">
       <div class="card-body">

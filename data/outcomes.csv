@@ -1,0 +1,66 @@
+id,objective,competency_id,created_at,updated_at
+1,Obtain and convey workplace information,1,2023-04-03 05:32:10,2023-04-03 05:32:10
+2,Speak English at a basic operational level,1,2023-04-03 05:32:14,2023-04-03 05:32:14
+3,Participate in workplace meetings and discussions,1,2023-04-03 05:32:17,2023-04-03 05:32:17
+4,Complete relevant work related documents,1,2023-04-03 05:32:24,2023-04-03 05:32:24
+5,Describe team role and scope,2,2023-04-03 05:40:59,2023-04-03 05:40:59
+6,Identify own role and responsibility within team,2,2023-04-03 05:42:45,2023-04-03 05:42:45
+7,Work as a team member,2,2023-04-03 05:43:08,2023-04-03 05:43:08
+8,Work effectively with colleagues,2,2023-04-03 05:43:42,2023-04-03 05:43:42
+9,Work in socially diverse environment,2,2023-04-03 05:44:09,2023-04-03 05:44:09
+10,Integrate personal objectives with organizational goals,3,2023-04-03 05:44:34,2023-04-03 05:44:34
+11,Set and meet work priorities,3,2023-04-03 05:44:36,2023-04-03 05:44:36
+12,Maintain professional growth and development,3,2023-04-03 05:44:40,2023-04-03 05:44:40
+13,Identify hazards and risks,4,2023-04-03 05:45:59,2023-04-03 05:45:59
+14,Evaluate hazards and risks,4,2023-04-03 05:46:02,2023-04-03 05:46:02
+15,Control hazards and risks,4,2023-04-03 05:46:04,2023-04-03 05:46:04
+16,Maintain OHS awareness,4,2023-04-03 05:46:07,2023-04-03 05:46:07
+17,Perform basic first-aid procedures,4,2023-04-03 05:46:10,2023-04-03 05:46:10
+18,Seek information on the industry,5,2023-04-03 05:47:55,2023-04-03 05:47:55
+19,Update industry knowledge,5,2023-04-03 05:47:58,2023-04-03 05:47:58
+20,Develop and update local knowledge,5,2023-04-03 05:48:00,2023-04-03 05:48:00
+21,Promote products and services to customers,5,2023-04-03 05:48:03,2023-04-03 05:48:03
+22,Follow hygiene procedures,6,2023-04-03 05:49:26,2023-04-03 05:49:26
+23,Identify and prevent hygiene risks,6,2023-04-03 05:49:28,2023-04-03 05:49:28
+24,Plan and prepare for tasks to be undertaken,7,2023-04-03 05:50:16,2023-04-03 05:50:16
+25,Input data into computer,7,2023-04-03 05:50:19,2023-04-03 05:50:19
+26,Access information using computer,7,2023-04-03 05:50:22,2023-04-03 05:50:22
+27,Produce/output data using computer system,7,2023-04-03 05:50:25,2023-04-03 05:50:25
+28,Maintain computer equipment and systems,7,2023-04-03 05:50:27,2023-04-03 05:50:27
+29,"Follow workplace procedures for health, safety and security practices",8,2023-04-03 05:52:24,2023-04-03 05:52:24
+30,Perform child protection duties relevant to the tourism industry,8,2023-04-03 05:52:28,2023-04-03 05:52:28
+31,Observe and monitor people,8,2023-04-03 05:52:31,2023-04-03 05:52:31
+32,Deal with emergency situation,8,2023-04-03 05:52:34,2023-04-03 05:52:34
+33,Maintain safe personal presentation standards,8,2023-04-03 05:52:38,2023-04-03 05:52:38
+34,Greet customer,9,2023-04-03 06:15:06,2023-04-03 06:15:06
+35,Identify needs of customers,9,2023-04-03 06:15:09,2023-04-03 06:15:09
+36,Deliver service to customer,9,2023-04-03 06:15:12,2023-04-03 06:15:12
+37,Handle queries through use of common business tools and technology,9,2023-04-03 06:15:16,2023-04-03 06:15:16
+38,"Handle complaints/conflict situations, evaluation and recommendations",9,2023-04-03 06:15:20,2023-04-03 06:15:20
+39,Take table reservations,10,2023-04-03 06:17:22,2023-04-03 06:17:22
+40,Prepare service stations and equipment,10,2023-04-03 06:17:25,2023-04-03 06:17:25
+41,Set up the tables in the dining area,10,2023-04-03 06:17:28,2023-04-03 06:17:28
+42,Set the mood/ambience of the dining area,10,2023-04-03 06:17:31,2023-04-03 06:17:31
+43,Welcome and greet guests,11,2023-04-03 06:19:16,2023-04-03 06:19:16
+44,Seat the guests,11,2023-04-03 06:19:18,2023-04-03 06:19:18
+45,Take food and beverage orders,11,2023-04-03 06:19:22,2023-04-03 06:19:22
+46,Liaise between kitchen and service areas,11,2023-04-03 06:19:26,2023-04-03 06:19:26
+47,Know the product,12,2023-04-03 06:21:04,2023-04-03 06:21:04
+48,Undertake suggestive selling,12,2023-04-03 06:21:06,2023-04-03 06:21:06
+49,Carry out upselling strategies,12,2023-04-03 06:21:09,2023-04-03 06:21:09
+50,Serve food orders,13,2023-04-03 06:23:13,2023-04-03 06:23:13
+51,Assist the diners,13,2023-04-03 06:23:15,2023-04-03 06:23:15
+52,Perform banquet or catering food service,13,2023-04-03 06:23:19,2023-04-03 06:23:19
+53,Serve beverage orders,13,2023-04-03 06:23:24,2023-04-03 06:23:34
+54,Process payments and receipts,13,2023-04-03 06:23:40,2023-04-03 06:23:40
+55,Conclude food service and close down dining area,13,2023-04-03 06:23:44,2023-04-03 06:23:44
+56,Manage intoxicated persons,13,2023-04-03 06:23:46,2023-04-03 06:23:46
+57,Take and process room service orders,14,2023-04-03 06:26:49,2023-04-03 06:26:49
+58,Set up trays and trolleys,14,2023-04-03 06:26:51,2023-04-03 06:26:51
+59,Present and serve food and beverage orders to guests,14,2023-04-03 06:26:54,2023-04-03 06:26:54
+60,Present room service account,14,2023-04-03 06:26:58,2023-04-03 06:26:58
+61,Clear away room service equipment,14,2023-04-03 06:27:00,2023-04-03 06:27:00
+62,Listen to the complaint,15,2023-04-03 06:28:46,2023-04-03 06:28:46
+63,Apologize to the guest,15,2023-04-03 06:28:48,2023-04-03 06:28:48
+64,Take proper action on the complain,15,2023-04-03 06:28:50,2023-04-03 06:28:50
+65,Record complaint,15,2023-04-03 06:28:52,2023-04-03 06:28:52

@@ -7,7 +7,7 @@
 @section('content')
   <main class="form w-100 m-auto">
 
-    <img src="{{ asset('img/logo.webp') }}" alt="School Logo" class="mb-4" width="72" height="72" />
+    <img src="{{ asset('img/logo.webp') }}" alt="Department Logo" class="mb-4" width="72" height="72" />
 
     <div class="card text-start">
       <div class="card-body">
@@ -20,6 +20,7 @@
               class="form-control form-control-sm @error('name') is-invalid @enderror"
               id="name"
               name="name"
+              required
             />
             @error('name')
               <div class="invalid-feedback">
@@ -34,6 +35,7 @@
               class="form-control form-control-sm @error('email') is-invalid @enderror"
               id="email"
               name="email"
+              required
             />
             @error('email')
               <div class="invalid-feedback">
@@ -48,6 +50,7 @@
               class="form-control form-control-sm @error('password') is-invalid @enderror"
               id="password"
               name="password"
+              required
             />
             @error('password')
               <div class="invalid-feedback">
@@ -62,6 +65,7 @@
                 class="form-control form-control-sm"
                 id="password_confirmation"
                 name="password_confirmation"
+                required
             />
           </div>
 

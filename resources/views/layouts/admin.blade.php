@@ -5,8 +5,16 @@
 @endpush
 
 @section('content')
-  <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="{{ url('/dashboard') }}">Admin</a>
+  <header class="navbar navbar-dark sticky-top bg-primary flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="{{ url('/dashboard') }}">
+      <img src="{{ asset('img/logo.webp') }}"
+        alt="Department Logo"
+        width="24"
+        height="24"
+        class="me-1 d-inline-block align-text-top"
+      />
+      Admin
+    </a>
     <button class="navbar-toggler position-absolute d-md-none collapsed"
       type="button"
       data-bs-toggle="collapse"
@@ -30,7 +38,7 @@
           >
             {{ auth()->user()->name }}
           </a>
-          <ul class="position-absolute dropdown-menu dropdown-menu-end dropdown-menu-dark">
+          <ul class="position-absolute dropdown-menu dropdown-menu-end">
             <li>
               <a class="dropdown-item"
                 href="{{ route('logout') }}"
@@ -51,15 +59,27 @@
         <div class="position-sticky pt-3 sidebar-sticky">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">
+              <a class="nav-link {{ request()->is('dashboard') ? 'active' : '' }}"
+                href="{{ url('/dashboard') }}"
+              >
                 <span data-feather="home" class="align-text-bottom"></span>
                 Dashboard
               </a>
             </li>
+            <h6 class="sidebar-heading px-3 mt-4 mb-1 text-muted text-uppercase">
+              Training Resultants
+            </h6>
             <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="book" class="align-text-bottom"></span>
-                Resultants
+              <a class="nav-link {{
+                  Str::contains(url()->current(), [
+                    'qualifications', 'competencies',
+                    'outcomes', 'tasks',
+                  ]) ? 'active' : ''
+                }}"
+                href="{{ route('qualifications.index') }}"
+              >
+                <span data-feather="file-text" class="align-text-bottom"></span>
+                Qualifications
               </a>
             </li>
           </ul>
@@ -68,7 +88,13 @@
     </div>
   </div>
 
-  <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+  <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 p-3">
+    @if (session('status'))
+      <div class="alert alert-success">
+        {{ session('status') }}
+      </div>
+    @endif
+
     @yield('main')
   </main>
 @endsection
