@@ -3,15 +3,11 @@
 @section('main')
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item active" aria-current="page">Qualifications</li>
+      <li class="breadcrumb-item active" aria-current="page">Programs</li>
     </ol>
   </nav>
 
-  <a href="{{ route('qualifications.create') }}"
-    class="mb-2 btn btn-sm btn-primary"
-  >
-    Add Qualification
-  </a>
+  <a href="{{ route('programs.create') }}" class="mb-2 btn btn-sm btn-primary">Add Program</a>
 
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
@@ -19,18 +15,16 @@
         <tr>
           <th>ID</th>
           <th>Title</th>
-          <th>Duration</th>
           <th>Action</th>
         </tr>
       </thead>
       <tbody>
-        @foreach ($qualifications as $qualification)
+        @foreach ($programs as $program)
           <tr>
-            <td>{{ $qualification->id }}</td>
-            <td>{{ $qualification->title }}</td>
-            <td>{{ $qualification->duration }} hours</td>
+            <td>{{ $program->id }}</td>
+            <td>{{ $program->title }}</td>
             <td>
-              <a href="{{ route('qualifications.edit', $qualification) }}"
+              <a href="{{ route('programs.edit', $program) }}"
                 class="action me-1 text-primary text-decoration-none">
                 Edit
               </a>

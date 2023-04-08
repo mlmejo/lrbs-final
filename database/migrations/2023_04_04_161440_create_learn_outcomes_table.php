@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('outcomes', function (Blueprint $table) {
+        Schema::create('learn_outcomes', function (Blueprint $table) {
             $table->id();
             $table->string('objective');
             $table->foreignId('competency_id')

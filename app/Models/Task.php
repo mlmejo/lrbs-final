@@ -9,10 +9,10 @@ class Task extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title'];
+    protected $fillable = ['learn_outcome_id', 'title'];
 
-    public function outcome()
+    public function learn_outcome()
     {
-        return $this->belongsTo(Outcome::class);
+        return $this->belongsTo(LearningOutcome::class, 'learn_outcome_id');
     }
 }

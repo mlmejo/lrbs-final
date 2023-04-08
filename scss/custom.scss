@@ -1,6 +1,7 @@
 $primary: #000066;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/select2-bootstrap-5-theme/src/include-all";
 
 .invalid-feedback {
     font-size: 0.875rem;

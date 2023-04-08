@@ -80,12 +80,6 @@
             </tr>
           </thead>
           <tbody>
-            @if (!$qualification->competencies->count() > 0)
-              <tr>
-                <td colspan="4" class="text-center">No data available in table</td>
-              </tr>
-            @endif
-
             @foreach ($qualification->competencies as $competency)
               <tr>
                 <td>{{ $competency->id }}</td>
@@ -113,23 +107,30 @@
 
       <button class="px-4 btn btn-sm btn-danger"
         data-bs-toggle="modal"
-        data-bs-target="#deleteModal"
-      >
+        data-bs-target="#delete-modal">
         Delete
       </button>
     </div>
   </div>
 
-  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal fade"
+    id="delete-modal"
+    tabindex="-1"
+    aria-labelledby="delete-modal-label"
+    aria-hidden="true"
+  >
     <div class="modal-dialog">
       <div class="modal-content">
+
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="deleteModalLabel">Confirm Deletion</h1>
+          <h1 class="modal-title fs-5" id="delete-modal-label">Confirm Deletion</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+
         <div class="modal-body">
           Are you sure you want to delete <strong>{{ $qualification->title }}</strong>?
         </div>
+
         <div class="modal-footer">
           <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Cancel</button>
           <form action="{{ route('qualifications.destroy', $qualification) }}" method="post">
@@ -138,6 +139,7 @@
             <button type="submit" class="btn btn-sm btn-danger">Delete</button>
           </form>
         </div>
+
       </div>
     </div>
   </div>

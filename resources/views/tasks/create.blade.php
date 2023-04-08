@@ -4,20 +4,22 @@
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <a href="{{ route('qualifications.edit', $outcome->competency->qualification) }}">
-          {{ $outcome->competency->qualification->title }}
+        <a href="{{ route(
+            'qualifications.edit',
+            $learn_outcome->competency->qualification,) }}">
+          {{ $learn_outcome->competency->qualification->title }}
         </a>
       </li>
       <li class="breadcrumb-item">
         <a href="{{ route('qualifications.competencies.edit', [
-            $outcome->competency->qualification, $outcome->competency]) }}">
-          {{ $outcome->competency->title }}
+            $learn_outcome->competency->qualification, $learn_outcome->competency]) }}">
+          {{ $learn_outcome->competency->title }}
         </a>
       </li>
       <li class="breadcrumb-item">
-        <a href="{{ route('competencies.outcomes.edit', [
-            $outcome->competency, $outcome]) }}">
-          {{ $outcome->objective }}
+        <a href="{{ route('competencies.learn_outcomes.edit', [
+            $learn_outcome->competency, $learn_outcome]) }}">
+          {{ $learn_outcome->objective }}
         </a>
       </li>
       <li class="breadcrumb-item active" aria-current="page">Add Task</li>
@@ -27,9 +29,9 @@
   <div class="card">
     <div class="card-body">
       <h1 class="h5">Add Task</h1>
-      <p>Learning Outcome: {{ $outcome->objective }}</p>
+      <p>Learning Outcome: {{ $learn_outcome->objective }}</p>
 
-      <form action="{{ route('outcomes.tasks.store', $outcome) }}" method="post">
+      <form action="{{ route('learn_outcomes.tasks.store', $learn_outcome) }}" method="post">
         @csrf
 
         <div class="mb-3 col-lg-6">
@@ -49,7 +51,7 @@
 
         <div class="d-flex">
           <a href="{{
-              route('competencies.outcomes.edit', [$outcome->competency, $outcome])
+              route('competencies.learn_outcomes.edit', [$learn_outcome->competency, $learn_outcome])
             }}"
             class="me-2 px-4 btn btn-sm btn-secondary"
           >

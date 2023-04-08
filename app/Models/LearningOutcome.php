@@ -7,11 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Outcome extends Model
+class LearningOutcome extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['objective', 'competency_id'];
+    protected $table = 'learn_outcomes';
+
+    protected $fillable = ['competency_id', 'objective'];
 
     public function competency(): BelongsTo
     {
@@ -20,6 +22,6 @@ class Outcome extends Model
 
     public function tasks(): HasMany
     {
-        return $this->hasMany(Task::class);
+        return $this->hasMany(Task::class, 'learn_outcome_id');
     }
 }

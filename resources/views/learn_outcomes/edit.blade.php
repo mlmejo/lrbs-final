@@ -15,7 +15,7 @@
         </a>
       </li>
       <li class="breadcrumb-item active" aria-current="page">
-        {{ $outcome->objective }}
+        {{ $learn_outcome->objective }}
       </li>
     </ol>
   </nav>
@@ -24,7 +24,12 @@
     <div class="card-body">
       <h1 class="mb-3 h5">Update Learning Outcome</h1>
 
-      <form action="{{ route('competencies.outcomes.update', [$competency, $outcome]) }}" method="post">
+      <form action="{{ route(
+          'competencies.learn_outcomes.update',
+          [$competency, $learn_outcome],
+        )
+        }}"
+        method="post">
         @csrf
         @method('PATCH')
 
@@ -34,7 +39,7 @@
             name="objective"
             id="objective"
             class="form-control form-control-sm @error('objective') is-invalid @enderror"
-            value="{{ $outcome->objective }}"
+            value="{{ $learn_outcome->objective }}"
             required
           />
           @error('objective')
@@ -45,10 +50,8 @@
         </div>
 
         <div class="d-flex">
-          <a href="{{ route(
-              'qualifications.competencies.edit',
-              [$competency->qualification, $competency]),
-            }}"
+          <a href="{{ route('qualifications.competencies.edit',
+              [$competency->qualification, $competency]) }}"
             class="me-2 px-4 btn btn-sm btn-secondary"
           >
             Go back
@@ -63,7 +66,7 @@
     <div class="card-body">
       <h1 class="mb-3 h5">Tasks</h1>
 
-      <a href="{{ route('outcomes.tasks.create', $outcome) }}"
+      <a href="{{ route('learn_outcomes.tasks.create', $learn_outcome) }}"
         class="mb-2 btn btn-sm btn-primary"
       >
 
@@ -79,18 +82,13 @@
             </tr>
           </thead>
           <tbody>
-            @if (!$tasks->count() > 0)
-              <tr>
-                <td colspan="4" class="text-center">No data available in table</td>
-              </tr>
-            @endif
-
             @foreach ($tasks->get() as $task)
               <tr>
                 <td>{{ $task->id }}</td>
                 <td>{{ $task->title }}</td>
                 <td>
-                  <a href="{{ route('outcomes.tasks.edit', [$outcome, $task]) }}"
+                  <a href="{{ route('learn_outcomes.tasks.edit',
+                      [$learn_outcome, $task]) }}"
                     class="action me-1 text-primary text-decoration-none">
                     Edit
                   </a>
@@ -126,12 +124,12 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          Are you sure you want to delete "<strong>{{ $outcome->objective }}</strong>"?
+          Are you sure you want to delete "<strong>{{ $learn_outcome->objective }}</strong>"?
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Cancel</button>
           <form action="{{
-              route('competencies.outcomes.destroy', [$competency, $outcome])
+              route('competencies.learn_outcomes.destroy', [$competency, $learn_outcome])
             }}"
             method="post"
           >

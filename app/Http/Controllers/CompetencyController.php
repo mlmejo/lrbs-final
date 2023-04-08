@@ -31,12 +31,9 @@ class CompetencyController extends Controller
 
     public function edit(Qualification $qualification, Competency $competency)
     {
-        $outcomes = $competency->outcomes();
-
         return view('competencies.edit', compact(
             'qualification',
             'competency',
-            'outcomes'
         ));
     }
 

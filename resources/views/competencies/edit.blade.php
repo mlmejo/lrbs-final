@@ -85,7 +85,7 @@
     <div class="card-body">
       <h1 class="mb-3 h5">Learning Outcomes</h1>
 
-      <a href="{{ route('competencies.outcomes.create', $competency) }}"
+      <a href="{{ route('competencies.learn_outcomes.create', $competency) }}"
         class="mb-2 btn btn-sm btn-primary"
       >
 
@@ -101,18 +101,12 @@
             </tr>
           </thead>
           <tbody>
-            @if (!$outcomes->count() > 0)
+            @foreach ($competency->learn_outcomes as $learn_outcome)
               <tr>
-                <td colspan="4" class="text-center">No data available in table</td>
-              </tr>
-            @endif
-
-            @foreach ($outcomes->get() as $outcome)
-              <tr>
-                <td>{{ $outcome->id }}</td>
-                <td>{{ $outcome->objective }}</td>
+                <td>{{ $learn_outcome->id }}</td>
+                <td>{{ $learn_outcome->objective }}</td>
                 <td>
-                  <a href="{{ route('competencies.outcomes.edit', [$competency, $outcome]) }}"
+                  <a href="{{ route('competencies.learn_outcomes.edit', [$competency, $learn_outcome]) }}"
                     class="action me-1 text-primary text-decoration-none">
                     Edit
                   </a>
@@ -143,13 +137,16 @@
   <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
+
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="deleteModalLabel">Confirm Deletion</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+
         <div class="modal-body">
           Are you sure you want to delete "<strong>{{ $competency->title }}</strong>"?
         </div>
+
         <div class="modal-footer">
           <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Cancel</button>
           <form action="{{ route('qualifications.competencies.destroy', [$qualification, $competency]) }}" method="post">
@@ -159,6 +156,7 @@
             <button type="submit" class="btn btn-sm btn-danger">Delete</button>
           </form>
         </div>
+
       </div>
     </div>
   </div>

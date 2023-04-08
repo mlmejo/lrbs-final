@@ -86,3 +86,7 @@ body {
 .action:hover {
     text-decoration: underline !important;
 }
+
+.dropdown-item {
+    font-size: .875rem;
+}

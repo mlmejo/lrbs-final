@@ -4,7 +4,9 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -44,6 +46,15 @@ class User extends Authenticatable
     ];
 
     /**
+     * Check if the user has the given role.
+     *
+     */
+    public function hasRole(string $role): bool
+    {
+        return $this->roles()->where('name', $role)->exists();
+    }
+
+    /**
      * The roles that belong to the user.
      *
      */
@@ -52,12 +63,13 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class);
     }
 
-    /**
-     * Check if the user has the given role.
-     *
-     */
-    public function hasRole(string $role): bool
+    public function trainee(): HasOne
     {
-        return $this->roles()->where('name', $role)->exists();
+        return $this->hasOne(Trainee::class);
+    }
+
+    public function trainer(): HasOne
+    {
+        return $this->hasOne(Trainer::class);
     }
 }

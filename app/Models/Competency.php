@@ -13,13 +13,13 @@ class Competency extends Model
 
     protected $fillable = ['qualification_id', 'category', 'title'];
 
+    public function learn_outcomes(): HasMany
+    {
+        return $this->hasMany(LearningOutcome::class);
+    }
+
     public function qualification(): BelongsTo
     {
         return $this->belongsTo(Qualification::class);
-    }
-
-    public function outcomes(): HasMany
-    {
-        return $this->hasMany(Outcome::class);
     }
 }

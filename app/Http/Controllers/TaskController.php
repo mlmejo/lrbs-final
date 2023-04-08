@@ -2,35 +2,35 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Outcome;
+use App\Models\LearningOutcome;
 use App\Models\Task;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-    public function create(Outcome $outcome)
+    public function create(LearningOutcome $learn_outcome)
     {
-        return view('tasks.create', compact('outcome'));
+        return view('tasks.create', compact('learn_outcome'));
     }
 
-    public function store(Request $request, Outcome $outcome)
+    public function store(Request $request, LearningOutcome $learn_outcome)
     {
         $validated = $request->validate([
             'title' => ['required', 'string'],
         ]);
 
-        $outcome->tasks()->create($validated);
+        $learn_outcome->tasks()->create($validated);
 
-        return redirect()->route('outcomes.tasks.create', $outcome)
+        return redirect()->route('learn_outcomes.tasks.create', $learn_outcome)
             ->with('status', $request->title . ' created.');
     }
 
-    public function edit(Outcome $outcome, Task $task)
+    public function edit(LearningOutcome $learn_outcome, Task $task)
     {
-        return view('tasks.edit', compact('outcome', 'task'));
+        return view('tasks.edit', compact('learn_outcome', 'task'));
     }
 
-    public function update(Request $request, Outcome $outcome, Task $task)
+    public function update(Request $request, LearningOutcome $learn_outcome, Task $task)
     {
         $validated = $request->validate([
             'title' => ['required', 'string'],
@@ -38,19 +38,19 @@ class TaskController extends Controller
 
         $task->update($validated);
 
-        return redirect()->route('outcomes.tasks.edit', [$outcome, $task])
+        return redirect()->route('learn_outcomes.tasks.edit', [$learn_outcome, $task])
             ->with('status', $request->title . ' updated.');
     }
 
-    public function destroy(Outcome $outcome, Task $task)
+    public function destroy(LearningOutcome $learn_outcome, Task $task)
     {
         $message = $task->title . ' deleted.';
 
         $task->delete();
 
         return redirect()->route(
-            'competencies.outcomes.edit',
-            [$outcome->competency, $outcome,]
+            'competencies.learn_outcomes.edit',
+            [$learn_outcome->competency, $learn_outcome,]
         )->with('status', $message);
     }
 }

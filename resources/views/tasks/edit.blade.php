@@ -4,20 +4,20 @@
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <a href="{{ route('qualifications.edit', $outcome->competency->qualification) }}">
-          {{ $outcome->competency->qualification->title }}
+        <a href="{{ route('qualifications.edit', $learn_outcome->competency->qualification) }}">
+          {{ $learn_outcome->competency->qualification->title }}
         </a>
       </li>
       <li class="breadcrumb-item">
         <a href="{{ route('qualifications.competencies.edit', [
-            $outcome->competency->qualification, $outcome->competency]) }}">
-          {{ $outcome->competency->title }}
+            $learn_outcome->competency->qualification, $learn_outcome->competency]) }}">
+          {{ $learn_outcome->competency->title }}
         </a>
       </li>
       <li class="breadcrumb-item">
-        <a href="{{ route('competencies.outcomes.edit', [
-            $outcome->competency, $outcome]) }}">
-          {{ $outcome->objective }}
+        <a href="{{ route('competencies.learn_outcomes.edit', [
+            $learn_outcome->competency, $learn_outcome]) }}">
+          {{ $learn_outcome->objective }}
         </a>
       </li>
       <li class="breadcrumb-item active" aria-current="page">
@@ -30,7 +30,7 @@
     <div class="card-body">
       <h1 class="mb-3 h5">Update Task</h1>
 
-      <form action="{{ route('outcomes.tasks.update', [$outcome, $task]) }}" method="post">
+      <form action="{{ route('learn_outcomes.tasks.update', [$learn_outcome, $task]) }}" method="post">
         @csrf
         @method('PATCH')
 
@@ -51,7 +51,7 @@
         </div>
 
         <div class="d-flex">
-          <a href="{{ route('competencies.outcomes.edit', [$outcome->competency, $outcome]) }}"
+          <a href="{{ route('competencies.learn_outcomes.edit', [$learn_outcome->competency, $learn_outcome]) }}"
             class="me-2 px-4 btn btn-sm btn-secondary"
           >
             Go back
@@ -80,17 +80,25 @@
   <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
+
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="deleteModalLabel">Confirm Deletion</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+
         <div class="modal-body">
           Are you sure you want to delete "<strong>{{ $task->title }}</strong>"?
         </div>
+
         <div class="modal-footer">
-          <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button"
+            class="btn btn-sm btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Cancel
+          </button>
           <form action="{{
-              route('outcomes.tasks.destroy', [$outcome, $task])
+              route('learn_outcomes.tasks.destroy', [$learn_outcome, $task])
             }}"
             method="post"
           >
@@ -99,6 +107,7 @@
             <button type="submit" class="btn btn-sm btn-danger">Delete</button>
           </form>
         </div>
+
       </div>
     </div>
   </div>

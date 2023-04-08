@@ -9,8 +9,8 @@
         </a>
       </li>
       <li class="breadcrumb-item">
-        <a href="{{ route('qualifications.competencies.edit', [
-            $competency->qualification, $competency]) }}">
+        <a href="{{ route('qualifications.competencies.edit',
+          [$competency->qualification, $competency]) }}">
           {{ $competency->title }}
         </a>
       </li>
@@ -23,7 +23,7 @@
       <h1 class="h5">Add Learning Outcome</h1>
       <p>Unit of Competency: {{ $competency->title }}</p>
 
-      <form action="{{ route('competencies.outcomes.store', $competency) }}" method="post">
+      <form action="{{ route('competencies.learn_outcomes.store', $competency) }}" method="post">
         @csrf
 
         <div class="mb-3 col-lg-6">
