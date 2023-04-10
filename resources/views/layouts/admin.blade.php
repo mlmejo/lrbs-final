@@ -28,9 +28,6 @@
     <div class="w-100"></div>
     <div class="navbar-nav">
       <div class="nav-item text-nowrap dropdown">
-        <form action="{{ route('logout') }}" method="post" id="logout-form">
-          @csrf
-          @method('DELETE')
           <a href="#"
             class="nav-link dropdown-toggle px-3"
             role="button"
@@ -40,12 +37,17 @@
           </a>
           <ul class="position-absolute dropdown-menu dropdown-menu-end">
             <li>
-              <a class="dropdown-item"
-                href="{{ route('logout') }}"
-                onclick="event.preventDefault();document.getElementById('logout-form').submit();"
-              >
-                Sign out
-              </a>
+              <form action="{{ route('logout') }}" method="post" id="logout-form">
+                @csrf
+                @method('DELETE')
+
+                <a class="dropdown-item"
+                  href="{{ route('logout') }}"
+                  onclick="event.preventDefault();document.getElementById('logout-form').submit();"
+                >
+                  Sign out
+                </a>
+              </form>
             </li>
           </ul>
         </form>

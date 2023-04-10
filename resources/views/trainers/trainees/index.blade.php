@@ -7,14 +7,14 @@
     </ol>
   </nav>
 
-  <a href="{{ route('registrations.create') }}"
-    class="mb-2 btn btn-sm btn-primary"
+  <a href="{{ route('trainers.trainees.create', request()->user()->trainer) }}"
+    class="mb-2 px-3 btn btn-sm btn-primary"
   >
     Create LRB
   </a>
 
   <div class="table-responsive">
-    <table class="table table-bordered table-striped">
+    <table class="datatable table table-bordered table-striped">
       <thead>
         <tr>
           <th>ID</th>
@@ -32,9 +32,10 @@
             <td>{{ $trainee->user->email }}</td>
             <td>{{ $trainee->program->title }}</td>
             <td>
-              <a href="{{ route('trainees.edit', $trainee) }}"
+              <a href="{{ route('trainers.trainees.edit', [
+                  request()->user()->trainer, $trainee]) }}"
                 class="action text-decoration-none">
-                Edit
+                View LRBs
               </a>
             </td>
           </tr>

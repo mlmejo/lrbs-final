@@ -10,7 +10,7 @@
   <a href="{{ route('programs.create') }}" class="mb-2 btn btn-sm btn-primary">Add Program</a>
 
   <div class="table-responsive">
-    <table class="table table-bordered table-striped">
+    <table class="datatable table table-bordered table-striped">
       <thead>
         <tr>
           <th>ID</th>

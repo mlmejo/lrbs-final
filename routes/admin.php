@@ -12,7 +12,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('programs', ProgramController::class);
-    Route::resource('programs.qualifications', ProgramQualificationController::class);
+    Route::resource('programs.qualifications', ProgramQualificationController::class)
+        ->except('index');
     Route::resource('qualifications', QualificationController::class);
     Route::resource('qualifications.competencies', CompetencyController::class);
     Route::resource('competencies.learn_outcomes', LearningOutcomeController::class);

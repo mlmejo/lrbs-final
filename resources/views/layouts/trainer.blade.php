@@ -13,7 +13,7 @@
         height="24"
         class="me-1 d-inline-block align-text-top"
       />
-      Admin
+      Trainer
     </a>
     <button class="navbar-toggler position-absolute d-md-none collapsed"
       type="button"
@@ -67,38 +67,14 @@
               </a>
             </li>
             <h6 class="sidebar-heading px-3 mt-4 mb-1 text-muted text-uppercase">
-              Training Resultants
+              Trainees
             </h6>
             <li class="nav-item">
-              <a class="nav-link {{ request()->is('programs/*') ? 'active' : '' }}"
-                href="{{ route('programs.index') }}"
+              <a class="nav-link {{ request()->is('trainers/*/trainees*') ? 'active' : '' }}"
+                href="{{ route('trainers.trainees.index', request()->user()->trainer) }}"
               >
-                <span data-feather="file-text" class="align-text-bottom"></span>
-                Programs
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {{
-                  Str::contains(url()->current(), [
-                    'qualifications', 'competencies',
-                    'outcomes', 'tasks',
-                  ]) ? 'active' : ''
-                }}"
-                href="{{ route('qualifications.index') }}"
-              >
-                <span data-feather="file-text" class="align-text-bottom"></span>
-                Qualifications
-              </a>
-            </li>
-            <h6 class="sidebar-heading px-3 mt-4 mb-1 text-muted text-uppercase">
-              Account Management
-            </h6>
-            <li class="nav-item">
-              <a class="nav-link {{ request()->is('admin/traine*') ? 'active' : '' }}"
-                href="{{ route('trainees.index') }}"
-              >
-                <span data-feather="users" class="align-text-bottom"></span>
-                Users
+                <span data-feather="book" class="align-text-bottom"></span>
+                Learner's Record Books
               </a>
             </li>
           </ul>

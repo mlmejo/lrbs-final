@@ -90,3 +90,7 @@ body {
 .dropdown-item {
     font-size: .875rem;
 }
+
+textarea {
+    resize: none;
+}

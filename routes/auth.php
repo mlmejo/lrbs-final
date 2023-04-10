@@ -9,10 +9,10 @@ Route::middleware('guest')->group(function () {
         ->name('login');
 
     Route::post('/login', [AuthenticatedSessionController::class, 'store']);
-
-    Route::delete('/logout', [AuthenticatedSessionController::class, 'destroy'])
-        ->middleware('auth')->name('logout');
 });
+
+Route::delete('/logout', [AuthenticatedSessionController::class, 'destroy'])
+    ->middleware('auth')->name('logout');
 
 Route::middleware('ensure.admin')->group(function () {
     Route::get('/register', [RegisteredUserController::class, 'create'])
